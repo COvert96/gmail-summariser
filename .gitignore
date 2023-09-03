@@ -126,12 +126,13 @@ summaries/*
 # Environments
 .env
 .venv
+config/credentials.json
+config/token.pickle
 env/
 venv/
 ENV/
 env.bak/
 venv.bak/
-config/credentials.json
 
 
 # Spyder project settings
