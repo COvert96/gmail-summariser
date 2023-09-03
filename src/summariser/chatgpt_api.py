@@ -1,18 +1,18 @@
-import requests
-import json
 import os
+import openai
 from dotenv import load_dotenv
 
 # Load environment variables from .env file
 load_dotenv()
 
-OPENAI_API_ENDPOINT = "https://api.openai.com/v1/engines/davinci-completion/completions"
+OPENAI_API_ENDPOINT = "https://api.openai.com/v1/chat/completions"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
-headers = {
-    "Authorization": f"Bearer {OPENAI_API_KEY}",
-    "Content-Type": "application/json"
-}
+# headers = {
+#     "Authorization": f"Bearer {OPENAI_API_KEY}",
+#     "Content-Type": "application/json"
+# }
+openai.api_key = OPENAI_API_KEY
 
 
 def summarise_text(text):
@@ -25,21 +25,21 @@ def summarise_text(text):
     Returns:
         str: The summarized text.
     """
-    payload = {
-        "prompt": f"Summarize the following email: {text}",
-        "max_tokens": 150  # You can adjust this based on desired summary length.
-    }
 
-    response = requests.post(OPENAI_API_ENDPOINT, headers=headers, data=json.dumps(payload))
-    response_json = response.json()
+    response = openai.ChatCompletion.create(model="gpt-4",
+                                            messages=[
+                                                {
+                                                    "role": "user", "content": f"Summarize the following email(s) in English: {text}"
+                                                }
+                                            ])
 
-    if "choices" in response_json and len(response_json["choices"]) > 0:
-        return response_json["choices"][0]["text"].strip()
+    if "choices" in response and len(response["choices"]) > 0:
+        return response["choices"][0]["message"]["content"].strip()
     else:
         return "Summary not available."
 
 
 if __name__ == '__main__':
     # Example usage:
-    summary = summarize_text("Hello, just checking in to see how things are...")
+    summary = summarise_text("Hello, just checking in to see how things are...")
     print(summary)

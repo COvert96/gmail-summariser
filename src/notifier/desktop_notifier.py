@@ -1,7 +1,13 @@
 from plyer import notification
+import os
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+base_dir = os.path.dirname(os.path.dirname(current_dir))
+
+ICON_PATH = os.path.join(base_dir, 'assets', 'app-2.ico')
 
 
-def send_notification(title, message, duration=10, app_name="Email Summariser", app_icon='../../assets/app-2.ico'):
+def send_notification(title, message, duration=10, app_name="Email Summariser", app_icon=ICON_PATH):
     """
     Send a desktop notification.
 

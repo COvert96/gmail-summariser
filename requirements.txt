@@ -19,6 +19,7 @@ httplib2==0.22.0
 idna @ file:///C:/ci_311/idna_1676424932545/work
 multidict @ file:///C:/ci_311/multidict_1676428396308/work
 oauthlib==3.2.2
+openai~=0.27.4
 plyer==2.1.0
 protobuf==4.24.2
 pyyaml==6.0
