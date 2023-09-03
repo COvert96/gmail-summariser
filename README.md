@@ -1,25 +1,25 @@
-# Email Summarizer
+# Email Summariser
 
-This project provides a desktop notification system that summarizes emails received over the last 12 hours using Python and ChatGPT.
+This project provides a desktop notification system that summarises emails received over the last 12 hours using Python and ChatGPT.
 
 ## Features
 
 - Fetches emails from Gmail for the past 12 hours.
-- Summarizes the content of emails using ChatGPT.
-- Displays summarized content as desktop notifications.
+- Summarises the content of emails using ChatGPT.
+- Displays summarised content as desktop notifications.
 
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 
-- Python 3.8 or higher
+- Python 3.10 or higher
 - Gmail API credentials saved as `credentials.json` in the `config/` directory
 
 ## Installation & Setup
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/your_username/email-summarizer.git
+    git clone https://github.com/your_username/email-summariser.git
     ```
 2. Navigate to the project directory and install the required Python packages:
     ```sh
@@ -30,7 +30,7 @@ Before you begin, ensure you have met the following requirements:
    * Follow the setup steps mentioned in [this section](#setting-up-gmail-api).
    
 ## Usage
-Run the summarizer with:
+Run the summariser with:
 ```sh
 python main.py
 ```
