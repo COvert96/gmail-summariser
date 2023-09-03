@@ -1,0 +1,2 @@
+email_check_frequency: 12  # Number of hours interval at which you check emails.
+notification_duration: 10  # Duration (in seconds) for which the notification will be displayed on the desktop.

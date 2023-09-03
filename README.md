@@ -23,7 +23,7 @@ Before you begin, ensure you have met the following requirements:
     ```
 2. Navigate to the project directory and install the required Python packages:
     ```sh
-    cd email-summarizer
+    cd gmail-summariser
     pip install -r requirements.txt
     ```
 3. Set up the Gmail API:
