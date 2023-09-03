@@ -5,8 +5,9 @@ This project provides a desktop notification system that summarises emails recei
 ## Features
 
 - Fetches emails from Gmail for the past 12 hours.
+    - This can be changed in the config.yaml file.
 - Summarises the content of emails using ChatGPT.
-- Displays summarised content as desktop notifications.
+- Saves summarised content in 'summaries' folder and sends desktop notification.
 
 ## Prerequisites
 
